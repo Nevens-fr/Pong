@@ -34,7 +34,7 @@ while continuer:
     event = pg.key.get_pressed()
 
     # IA
-    j2.updateY(1, balle)
+    j2.updateY(WIN_WIDTH, balle)
 
     # Déplacement J1
     if event[pg.K_z]:

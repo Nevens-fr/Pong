@@ -7,9 +7,10 @@ class IA(Joueur):
 
         Joueur.__init__(self, x,y, WIN_HEIGHT, WIN_WIDTH)
         self.departY = y
+        self.win_height = WIN_HEIGHT
 
     # modifie la position en hauteur du joueur
-    def updateY(self, ope, balle):
+    def updateY(self, WIN_WIDTH, balle):
 
         if self.time +10 <= pg.time.get_ticks():
             self.time = pg.time.get_ticks()
@@ -21,8 +22,18 @@ class IA(Joueur):
                 elif self.barre.y  > self.departY:
                     self.barre.y -= 2
 
-            else:
-                #On essaie de prévoir la trajectoire de la balle
-                print("come")
+            elif balle.barre.x >= WIN_WIDTH / 2:
 
-          
+                if balle.barre.y < self.win_height * 0.75:
+
+                    if balle.directionY == 0 and balle.barre.y >= self.win_height * 0.80: #la balle va percuter un mur avant d'arriver
+                        a = 1
+                    elif balle.directionY == 1 and balle.barre.y <= self.win_height * 0.2:#la balle va percuter un mur avant d'arriver
+                        a = 1
+                    else:
+                        if balle.barre.y < self.barre.y and balle.directionY == 1:
+                            self.barre.y -= 3
+                        elif balle.barre.y > self.barre.y and balle.directionY == 0:
+                            self.barre.y += 3
+
+              
