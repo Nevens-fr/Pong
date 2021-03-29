@@ -1,6 +1,7 @@
 from Joueur import *
 from Balle import *
 from IA import *
+from menu import *
 
 import pygame as pg
 
@@ -15,10 +16,16 @@ screen = pg.display.set_mode((WIN_WIDTH, WIN_HEIGHT))
 
 pg.display.set_caption("Pong")
 
+logo = pg.image.load("icone.png")
+
+pg.display.set_icon(logo)
+
 myfont = pg.font.SysFont("Comic Sans MS", 30)
 
 vitesse = 1
 temps = pg.time.get_ticks()
+
+menu(screen, WIN_WIDTH, WIN_HEIGHT, myfont)
 
 ## Création des joueurs et balle
 j1 = Joueur(0, WIN_HEIGHT / 2 - (WIN_HEIGHT * 0.3)/2, WIN_HEIGHT, WIN_WIDTH)
