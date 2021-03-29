@@ -15,7 +15,7 @@ def menu(screen, win_w, win_h, font):
 	rect1 = pg.Rect(win_w * 0.41, win_h * 0.68, win_w * 0.19, win_h * 0.15)
 	rect2 = pg.Rect(win_w * 0.41, win_h * 0.83, win_w * 0.19, win_h * 0.15)
 
-	selected = 1
+	selected = 0
 
 	temps = pg.time.get_ticks()
 

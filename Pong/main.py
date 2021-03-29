@@ -19,6 +19,15 @@ pg.display.set_icon(logo)
 
 myfont = pg.font.SysFont("Comic Sans MS", 30)
 
+logo = pg.image.load("logo_NS.png")
+
+screen.blit(logo,(WIN_WIDTH / 2 - 480 / 2, WIN_HEIGHT / 2 - 290 / 2))
+
+pg.display.flip()
+
+pg.time.wait(2500)
+
+
 continuer = True
 
 while continuer:

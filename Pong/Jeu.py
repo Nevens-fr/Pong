@@ -52,7 +52,7 @@ def jeu(screen, WIN_WIDTH, WIN_HEIGHT, myfont, nbPlayer):
             continuer = False
         for events in pg.event.get():
             if events.type == pg.QUIT:
-                continuer = False
+                exit()
 
         balle.deplace(vitesse)
 
