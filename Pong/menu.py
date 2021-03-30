@@ -1,5 +1,7 @@
 import pygame as pg
 
+import platform
+
 
 # fonction qui gère le menu principal
 def menu(screen, win_w, win_h, font):
@@ -11,9 +13,14 @@ def menu(screen, win_w, win_h, font):
 	joueursTxt = font.render("vs J2", False, (255, 255, 255))
 	quitterTxt = font.render("Quitter", False, (255,255,255))
 
-	rect = pg.Rect(win_w * 0.41, win_h * 0.53, win_w * 0.19, win_h * 0.15)
-	rect1 = pg.Rect(win_w * 0.41, win_h * 0.68, win_w * 0.19, win_h * 0.15)
-	rect2 = pg.Rect(win_w * 0.41, win_h * 0.83, win_w * 0.19, win_h * 0.15)
+	if platform.system() == "Linux":
+		rect = pg.Rect(win_w * 0.39, win_h * 0.5, win_w * 0.19, win_h * 0.15)
+		rect1 = pg.Rect(win_w * 0.39, win_h * 0.65, win_w * 0.19, win_h * 0.15)
+		rect2 = pg.Rect(win_w * 0.39, win_h * 0.8, win_w * 0.19, win_h * 0.15)
+	else:
+		rect = pg.Rect(win_w * 0.41, win_h * 0.53, win_w * 0.19, win_h * 0.15)
+		rect1 = pg.Rect(win_w * 0.41, win_h * 0.68, win_w * 0.19, win_h * 0.15)
+		rect2 = pg.Rect(win_w * 0.41, win_h * 0.83, win_w * 0.19, win_h * 0.15)
 
 	selected = 0
 

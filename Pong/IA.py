@@ -6,7 +6,7 @@ class IA(Joueur):
     def __init__(self, x , y, WIN_HEIGHT, WIN_WIDTH):
 
         Joueur.__init__(self, x,y, WIN_HEIGHT, WIN_WIDTH)
-        self.departY = y
+        self.departY = y + 25
         self.win_height = WIN_HEIGHT
 
     # modifie la position en hauteur du joueur
@@ -31,9 +31,7 @@ class IA(Joueur):
                     elif balle.directionY == 1 and balle.barre.y <= self.win_height * 0.2:#la balle va percuter un mur avant d'arriver
                         a = 1
                     else:
-                        if balle.barre.y < self.barre.y and balle.directionY == 1:
+                        if balle.barre.y - 20 < self.barre.y and balle.directionY == 1:
                             self.barre.y -= 3
-                        elif balle.barre.y > self.barre.y and balle.directionY == 0:
+                        elif balle.barre.y + 20 > self.barre.y and balle.directionY == 0:
                             self.barre.y += 3
-
-              
