@@ -1,7 +1,8 @@
 from menu import *
 from Jeu import *
 
-
+##
+# Création et set up de la fenetre
 
 pg.init()
 pg.font.init()
@@ -19,6 +20,9 @@ pg.display.set_icon(logo)
 
 myfont = pg.font.SysFont("Comic Sans MS", 30)
 
+##
+# Affichage du logo
+
 logo = pg.image.load("logo_NS.png")
 
 screen.blit(logo,(WIN_WIDTH / 2 - 480 / 2, WIN_HEIGHT / 2 - 290 / 2))
@@ -27,7 +31,8 @@ pg.display.flip()
 
 pg.time.wait(2500)
 
-
+##
+# Boucle principale du programme
 continuer = True
 
 while continuer:
